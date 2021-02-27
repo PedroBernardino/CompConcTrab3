@@ -2,7 +2,7 @@
 
 void * maiorSequencia()
 {
-	int numAtual = -1, seqAtual= 0, maiorSequencia = 0;
+	int numAtual = -1, seqAtual= 0,posSequenciaAtual = 0, maiorSequencia = 0, numMaiorSequencia = -1, posMaiorSequencia = 0;
 	while(1)
 	{
 		//pega um vetor(bloco) de inteiros de tamanho M do buffer para ler
@@ -12,9 +12,14 @@ void * maiorSequencia()
 				seqAtual++;
 			else{
 				if(seqAtual > maiorSequencia)
+				{
 					maiorSequencia = seqAtual;
+					numMaiorSequencia = numAtual;
+					posMaiorSequencia = posSequenciaAtual;
+				}
 				numAtual = vetor[i];
 				seqAtual = 1;
+				posSequenciaAtual = i;
 			}
 		}
 	} 
